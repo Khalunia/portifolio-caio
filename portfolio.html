@@ -1,95 +1,252 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio Caio Franco</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 0;
-    }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caio Franco – Portfolio</title>
+    <style>
+      :root {
+        --bg: #0d1b2a;
+        --surface: #1b263b;
+        --primary: #00b4d8;
+        --text: #e0e1dd;
+        --muted: #778da9;
+      }
 
-    header {
-      background-color: #1f2937;
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      }
 
-    .container {
-      padding: 40px;
-      max-width: 1100px;
-      margin: auto;
-    }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: var(--surface);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
 
-    .project-card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
+      .navbar .logo {
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
 
-    .project-card img {
-      width: 100%;
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
+      .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+      }
 
-    .project-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+      .nav-links a:hover {
+        color: var(--primary);
+      }
 
-    .project-desc {
-      font-size: 14px;
-      margin-bottom: 15px;
-      color: #333;
-    }
+      header {
+        max-width: 800px;
+        margin: 4rem auto 3rem;
+        text-align: center;
+        padding: 0 1rem;
+      }
 
-    .project-link {
-      text-decoration: none;
-      color: #1f2937;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Portfólio de Projetos - Caio Franco</h1>
-  </header>
+      header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
 
-  <div class="container">
-    <h2>Projetos</h2>
-    <div class="project-grid">
+      header p {
+        color: var(--muted);
+        font-size: 1rem;
+      }
 
-      <div class="project-card">
-        <img src="img/dashboard-frete-thumbnail.png" alt="Dashboard de Frete">
-        <div class="project-title">Dashboard de Custo de Frete</div>
-        <div class="project-desc">
-          Análise de reajuste de frete comparado à inflação. Integrado com SAP, SQL, Excel e Power BI.
-        </div>
-        <a href="docs/Projeto DashBoard de Frete.pdf" target="_blank" class="project-link">Ver documentação</a>
+      #projects {
+        max-width: 1100px;
+        margin: 0 auto 4rem;
+        padding: 0 1.5rem;
+      }
+
+      #projects h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        text-align: center;
+      }
+
+      .grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: var(--surface);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 300px;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 1rem 1.25rem 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        flex: 1;
+      }
+
+      .card a {
+        align-self: flex-start;
+        margin-top: 1rem;
+        background: var(--primary);
+        color: #000;
+        text-decoration: none;
+        padding: 0.5rem 0.9rem;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: background 0.2s;
+      }
+
+      .card a:hover {
+        background: #0096c7;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 1rem 1.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: auto;
+      }
+
+      .contact {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .contact h3 {
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .contact a {
+        display: inline-block;
+        margin: 0.5rem 1rem;
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+      }
+
+      .contact a:hover {
+        color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Caio Franco</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
+    </nav>
 
-      <!-- Adicione mais projetos aqui -->
+    <header>
+      <h1>Data Analyst</h1>
+      <p>
+        Passionate about turning logistics data into intelligent decisions. Specialist in Power BI,
+        SQL and process automation to boost productivity and profitability.
+      </p>
+    </header>
 
-    </div>
-  </div>
-</body>
+    <section id="projects">
+      <h2>Main Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="img/projetoDash.png" alt="Freight Cost Dashboard" />
+          <div class="card-content">
+            <h3>Freight Cost Dashboard</h3>
+            <p>Monitoring R$/Ton compared to benchmark (inflation or +5%) with dynamic segmentations.</p>
+            <a href="docs/dashboard-frete.pdf" target="_blank">View PDF</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/Game2d.png" alt="Wild Eyed Game" />
+          <div class="card-content">
+            <h3>Wild Eyed – 2D RPG</h3>
+            <p>Indie game in Java focused on OOP, state control and combat mechanics inspired by classic ARPGs.</p>
+            <a href="https://github.com/Khalunia/WildEyed" target="_blank">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://placehold.co/600x400?text=Power+Automate+Flow" alt="Power Automate Flow" />
+          <div class="card-content">
+            <h3>Freight Report Automation</h3>
+            <p>Power Automate flow that consolidates daily stock data in a faster and more standardized way.</p>
+            <a href="#" target="_blank">Documentation (coming soon)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h3>Contact</h3>
+      <a href="mailto:caio.of.franco@gmail.com">📧 caio.of.franco@gmail.com</a>
+      <a href="tel:+5561981494299">📱 +55 61 9 8149-4299</a>
+      <a href="https://www.linkedin.com/in/caio-franco-252bbb2b1" target="_blank">🔗 LinkedIn</a>
+    </section>
+
+    <footer>
+      © 2025 Caio Franco — All rights reserved
+    </footer>
+  </body>
 </html>
