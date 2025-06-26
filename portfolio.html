@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio Caio Franco</title>
   <style>
     body {
@@ -24,25 +25,19 @@
       margin: auto;
     }
 
-    h2 {
-      color: #1f2937;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
-
-    .projects-grid {
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
+      margin-top: 30px;
     }
 
     .project-card {
       background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      overflow: hidden;
-      transition: transform 0.2s ease;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
     }
 
     .project-card:hover {
@@ -51,18 +46,50 @@
 
     .project-card img {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
     }
 
-    .project-card .content {
-      padding: 20px;
+    .project-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
-    .project-card h3 {
-      margin-top: 0;
-      font-size: 20px;
+    .project-desc {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #333;
     }
 
-    .project-card p {
-      font-
+    .project-link {
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfólio de Projetos - Caio Franco</h1>
+  </header>
+
+  <div class="container">
+    <h2>Projetos</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <img src="img/dashboard-frete-thumbnail.png" alt="Dashboard de Frete">
+        <div class="project-title">Dashboard de Custo de Frete</div>
+        <div class="project-desc">
+          Análise de reajuste de frete comparado à inflação. Integrado com SAP, SQL, Excel e Power BI.
+        </div>
+        <a href="docs/Projeto DashBoard de Frete.pdf" target="_blank" class="project-link">Ver documentação</a>
+      </div>
+
+      <!-- Adicione mais projetos aqui -->
+
+    </div>
+  </div>
+</body>
+</html>
