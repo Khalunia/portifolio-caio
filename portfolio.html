@@ -1,155 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio – Caio Franco</title>
+  <meta charset="UTF-8">
+  <title>Portfólio Caio Franco</title>
   <style>
-    :root {
-      --bg: #f7f9fc;
-      --primary: #0d47a1;
-      --text: #212121;
-      --card-bg: #ffffff;
-      --card-shadow: rgba(0, 0, 0, 0.05);
-    }
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
       margin: 0;
       padding: 0;
-      font-family: "Segoe UI", "Roboto", Arial, sans-serif;
     }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
+
     header {
-      background: var(--primary);
-      color: #fff;
-      padding: 2rem 1rem;
+      background-color: #1f2937;
+      color: white;
+      padding: 30px;
       text-align: center;
     }
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+
+    .container {
+      padding: 40px;
+      max-width: 1100px;
+      margin: auto;
     }
-    header p {
-      opacity: 0.9;
+
+    h2 {
+      color: #1f2937;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
     }
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-    .grid {
+
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px var(--card-shadow);
+
+    .project-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease;
     }
-    .card:hover {
-      transform: translateY(-4px);
+
+    .project-card:hover {
+      transform: translateY(-5px);
     }
-    .card img {
+
+    .project-card img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
     }
-    .card-content {
-      padding: 1rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-    .card p {
-      flex: 1;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-    .card a {
-      align-self: flex-start;
-      text-decoration: none;
-      background: var(--primary);
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      transition: background 0.2s ease-in-out;
-    }
-    .card a:hover {
-      background: #06337a;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Caio Franco</h1>
-    <p>Analista de Dados | Logística &amp; Business Intelligence</p>
-  </header>
 
-  <main>
-    <section id="projetos">
-      <h2 class="section-title">Projetos</h2>
-      <div class="grid">
-        <!-- Projeto 1: Dashboard de Custo de Frete -->
-        <div class="card">
-          <img src="https://placehold.co/600x400?text=Dashboard+Custo+de+Frete" alt="Thumbnail do dashboard de custo de frete" />
-          <div class="card-content">
-            <h3>Dashboard de Custo de Frete</h3>
-            <p>Power BI para monitorar custos de frete versus meta (inflação ou +5%), com segmentação por tipo de carga, estado e mês.</p>
-            <a href="docs/dashboard-frete.pdf" target="_blank" rel="noopener">Documentação (PDF)</a>
-          </div>
-        </div>
+    .project-card .content {
+      padding: 20px;
+    }
 
-        <!-- Projeto 2: Rastreamento de Pallets (placeholder) -->
-        <div class="card">
-          <img src="https://placehold.co/600x400?text=Rastreamento+de+Pallets" alt="Thumbnail do projeto Rastreamento de Pallets" />
-          <div class="card-content">
-            <h3>Rastreamento de Pallets</h3>
-            <p>Solução em Power BI para acompanhar estoque diário de pallets com lógica de Stock on Hand e alertas de níveis críticos.</p>
-            <a href="#" target="_blank" rel="noopener">Documentação (em breve)</a>
-          </div>
-        </div>
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
 
-        <!-- Projeto 3: Jogo Indie Wild Eyed (placeholder) -->
-        <div class="card">
-          <img src="https://placehold.co/600x400?text=Wild+Eyed+Game" alt="Thumbnail do jogo Wild Eyed" />
-          <div class="card-content">
-            <h3>Wild Eyed – 2D RPG</h3>
-            <p>Jogo indie em Java, utilizando princípios de orientação a objetos, gestão de estados e design de sprites pixel‑art.</p>
-            <a href="https://github.com/SEU_USUARIO/WildEyed" target="_blank" rel="noopener">Repositório no GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Caio Franco — Todos os direitos reservados
-  </footer>
-</body>
-</html>
+    .project-card p {
+      font-
